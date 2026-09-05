@@ -1,6 +1,9 @@
 from secrets import token_bytes
 from coincurve import PublicKey
-from sha3 import keccak_256
+from Crypto.Hash import keccak
+
+def keccak_256(data):
+    return keccak.new(digest_bits=256, data=data)
 print("Vanity Etherium Wallet Maker.\nby: thelamewizard")
 finalResult =""
 pairs= {"e":2}
